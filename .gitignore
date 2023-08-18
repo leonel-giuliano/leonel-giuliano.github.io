@@ -5,8 +5,7 @@
 node_modules
 sass
 TEST
-package.json
-package-lock.json
+*.json
 
 ### Sass ###
 .sass-cache/
