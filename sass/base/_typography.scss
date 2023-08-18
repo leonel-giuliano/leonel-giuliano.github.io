@@ -1,0 +1,10 @@
+@use '../abstracts/variables';
+
+
+
+html {
+    font-size: map-get(
+        variables.$font,
+        size
+    );
+}
