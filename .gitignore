@@ -3,9 +3,9 @@
 
 ### Personal ###
 node_modules
-sass
 TEST
-*.json
+package.json
+package-lock.json
 
 ### Sass ###
 .sass-cache/
