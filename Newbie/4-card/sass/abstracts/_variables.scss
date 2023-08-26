@@ -2,8 +2,8 @@
 
 $color-base: (
     primary: (
-        red: (0, 78%, 62%),
         cyan: (180, 62%, 55%),
+        red: (0, 78%, 62%),
         orange: (34, 97%, 64%),
         blue: (212, 86%, 64%),
     ),
@@ -18,11 +18,11 @@ $color-base: (
 $color: ();
 
 @each $type, $value in $color-base {
-    @each $pick, $cont in $color-base {
+    @each $pick, $content in $value {
         $color: map.deep-merge(
             $color,
             ($type: ($pick: hsl(join(
-                $cont,
+                $content,
                 (), space
             ))))
         );

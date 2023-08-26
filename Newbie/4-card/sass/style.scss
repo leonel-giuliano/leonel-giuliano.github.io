@@ -1,2 +1,99 @@
 @use './base';
 @use './abstracts';
+
+@use 'sass:math';
+
+body {
+    --sli-white: #{join(map-get(
+        abstracts.$color-base,
+        neutral,
+        gray-blue
+    ), .15)};
+
+    box-sizing: border-box;
+    grid-template-rows: min-content 1fr;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 0 clamp(2rem, 10vw, 10rem);
+    color: map-get(
+        abstracts.$color,
+        neutral,
+        gray-blue
+    );
+    background-color: hsla(var(--sli-white));
+}
+
+.grid-flow {
+    display: grid;
+    place-items: center;
+}
+
+[weight="semi-bold"] {
+    color: map-get(
+        abstracts.$color,
+        neutral,
+        dark-blue
+    );
+}
+
+header {
+    max-width: 35rem;
+    margin: clamp(1.25rem, 7.5dvh, 5rem) 0;
+}
+
+.title {
+    margin-bottom: .75rem;
+
+    span { display: block; }
+}
+
+.items {
+    gap: 1rem;
+    height: 100%;
+    margin-bottom: clamp(1rem, 5dvh, 3.75rem);
+
+    @include abstracts.screen() {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+.item {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: .75rem 10%;
+    background-color: map-get(
+        abstracts.$color,
+        neutral,
+        light-gray
+    );
+    border-radius: .4rem;
+    box-shadow: 0 .5rem 1rem 0 map-get(
+        abstracts.$color,
+        neutral,
+        gray-blue
+    );
+}
+
+.item-icon { justify-self: right; }
+
+@each $type, $value in abstracts.$color {
+    @if $type == 'primary' {
+        @each $pick, $content in $value {
+            $i: index($value, $pick $content);
+
+            .item:nth-child(#{$i}) {
+                border-top: .2rem solid $content;
+
+                @include abstracts.screen() {
+                    @if $i == 1 or $i == 4 {
+                        grid-row: 1 / 3;
+                        grid-column: (1 + math.div(2, 3) * ($i - 1)) / span 1;
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

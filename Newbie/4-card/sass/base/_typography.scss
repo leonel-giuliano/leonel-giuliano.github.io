@@ -33,3 +33,41 @@ html {
         size
     );
 }
+
+body {
+    font-family: map-get(
+        variables.$font,
+        family
+    );
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        regular
+    );
+
+    line-height: 1.25rem;
+}
+
+header { text-align: center; }
+
+[weight="semi-bold"] {
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        semi-bold
+    );
+    line-height: 1.875em;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        extra-light
+    );
+}
+
+.item-title { font-size: 1.125rem; }
+
+.item-description { font-size: .875rem; }
