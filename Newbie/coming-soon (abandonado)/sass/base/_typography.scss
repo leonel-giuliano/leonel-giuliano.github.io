@@ -1,0 +1,54 @@
+@use '../abstracts/variables';
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-display: swap;
+    src: local('Josefin Sans Thin'),
+        url(../fonts/josefinsans-variablefont_wght-webfont.woff2) format('woff2'),
+        url(../fonts/josefinsans-variablefont_wght-webfont.woff) format('woff');
+    font-weight: 0 1000;
+}
+
+html {
+    font-size: map-get(
+        variables.$font,
+        size
+    );
+}
+
+body {
+    text-align: center;
+    font-family: map-get(
+        variables.$font,
+        family
+    );
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        regular
+    );
+}
+
+.title {
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        light
+    );
+    font-size: 1.75rem;
+    letter-spacing: .5ch;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+
+    span {
+        font-weight: map-get(
+            variables.$font,
+            weight,
+            semi-bold
+        );
+    }
+}
+
+.description {
+    line-height: 1.5rem;
+}

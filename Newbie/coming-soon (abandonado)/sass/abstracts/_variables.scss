@@ -1,0 +1,81 @@
+@use 'sass:map';
+
+$color-base: (
+    primary: (
+        des-red: (0, 36%, 70%),
+        soft-red: (0, 93%, 68%),
+    ),
+
+    neutral: (
+        dark-gray-red: (0, 6%, 24%),
+    ),
+
+    gradient: (
+        white: (
+            type: 'linear',
+            ang: 135deg,
+            color: (
+                (0, 0%, 100%),
+                (0, 100%, 98%)
+            ),
+        ),
+        salmon: (
+            type: 'linear',
+            ang: 135deg,
+            color: (
+                (0, 80%, 86%),
+                (0, 74%, 74%)
+            ),
+        ),
+    ),
+);
+
+$color: ();
+
+@each $type, $value in $color-base {
+    @if $type != 'gradient' {
+        @each $pick, $content in $value {
+            $color: map.deep-merge(
+                $color,
+                ($type: ($pick: hsl(join(
+                    $content,
+                    (), space
+                ))))
+            );
+
+            :root { --#{$type}-#{$pick}: #{$content}; }
+        }
+    } @else {
+        @each $gr, $value-gr in $value {
+            $type-gr: map-get($color-base, gradient, $gr, type);
+            $ang: map-get($color-base, gradient, $gr, ang);
+            $color-gr: ();
+
+            @each $pick in map-get($color-base, gradient, $gr, color) {
+                $i: index(map-get($color-base, gradient, $gr, color), $pick);
+                $color-gr: join($color-gr, hsl(join(
+                    $pick,
+                    (), space
+                )), comma);
+
+                :root { --#{$type}-#{"" + $gr}-#{$i}: #{$pick}; }
+            }
+
+            $content: #{$type-gr}-gradient($ang, $color-gr);
+            $color: map.deep-merge(
+                $color,
+                ($type: ($gr: $content))
+            );
+        }
+    }
+}
+
+$font: (
+    size: 16px,
+    family: ('Josefin Sans', sans-serif),
+    weight: (
+        light: 300,
+        regular: 400,
+        semi-bold: 600,
+    ),
+);

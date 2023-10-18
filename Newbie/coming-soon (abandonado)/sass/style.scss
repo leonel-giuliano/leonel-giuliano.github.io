@@ -1,0 +1,98 @@
+@use './base';
+@use './abstracts';
+
+body {
+    $padding: 2.25rem;
+
+    grid-template-rows: 5rem 3fr 5fr;
+    grid-template-columns: $padding 1fr $padding;
+    grid-auto-flow: column;
+    width: 100%;
+    min-height: 100dvh;
+    color: map-get(
+        abstracts.$color,
+        primary,
+        des-red
+    );
+    background-image: map-get(
+        abstracts.$color,
+        gradient,
+        white
+    );
+    background-color: red;
+
+    & > * {
+        grid-column: 2 / 3;
+    }
+}
+
+.grid-flow {
+    display: grid;
+    place-items: center;
+}
+
+.logo {
+    justify-self: left;
+}
+
+.person-wrapper {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 100%;
+}
+
+.person {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    width: min-content;
+
+    span {
+        color: map-get(
+            abstracts.$color,
+            neutral,
+            dark-gray-red
+        );
+    }
+}
+
+main {
+    height: 100%;
+}
+
+form {
+    --_border__des-red: hsla(var(--primary-des-red), .7);
+    --_email-padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 4.5rem;
+    width: 100%;
+    border: abstracts.pxRem(1px) solid var(--_border__des-red);
+    border-radius: calc(var(--_email-padding) * 2);
+}
+
+[type="email"] {
+    box-sizing: border-box;
+    padding: var(--_email-padding);
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &::placeholder { color: var(--_border__des-red); }
+}
+
+.arrow-wrapper {
+    border-radius: calc(var(--_email-padding) * 2);
+    background-image: map-get(
+        abstracts.$color,
+        gradient,
+        salmon
+    );    
+}
+
+.arrow {
+    height: 40%;
+}
