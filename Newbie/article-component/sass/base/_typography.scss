@@ -1,0 +1,48 @@
+@use '../abstracts/variables';
+
+@font-face {
+    font-family: 'Manrope';
+    font-display: static;
+    src: local('Manrope Medium'),
+        url('/Newbie/article-component/fonts/Manrope/web-fonts/Manrope-Medium.woff2') format('woff2'),
+        url('/Newbie/article-component/fonts/Manrope/web-fonts/Manrope-Medium.woff') format('woff');
+    font-weight: 500 600;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    font-display: static;
+    src: local('Manrope Bold'),
+        url('/Newbie/article-component/fonts/Manrope/web-fonts/Manrope-Bold.woff2') format('woff2'),
+        url('/Newbie/article-component/fonts/Manrope/web-fonts/Manrope-Bold.woff') format('woff');
+    font-weight: 700 800;
+}
+
+html {
+    font-size: map-get(
+        variables.$font,
+        size
+    );
+}
+
+body {
+    font-family: map-get(
+        variables.$font,
+        family
+    );
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        medium
+    );
+    line-height: 2rem;
+}
+
+.title {
+    font-weight: map-get(
+        variables.$font,
+        weight,
+        bold
+    );
+    font-size: 1.25rem;
+}

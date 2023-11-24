@@ -1,0 +1,76 @@
+@use 'sass:map';
+
+$color-base: ( /* Los colores van como "(0, 0%, 0%)," */
+    neutral: (
+        dark-gray-blue: (217, 19%, 35%),
+        des-dark-blue: (214, 17%, 51%),
+        gray-blue: (212, 23%, 69%),
+        light-gray-blue: (210, 46%, 95%),
+    ),
+);
+
+/* GRADIENT: la estructura es como:
+    white: (
+        type: 'linear',
+        ang: 135deg,
+        color: (
+            (0, 0%, 100%), // El orden det. la dir.
+            (0, 100%, 98%)
+        ),
+    )
+*/
+
+$color: (); /* Es el que se usa en el cod. a menos que se cambia por "hsla()" */
+
+$font: (
+    size: 13px,
+    family: 'Manrope',
+    weight: (
+        medium: 500,
+        bold: 700
+    ),
+);
+
+/* Cód. para pasar de "$color-base" a "$color" */
+
+@each $type, $value in $color-base {
+    @if $type != 'gradient' {
+        :root {
+            @each $pick, $content in $value {
+                $color: map.deep-merge(
+                    $color,
+                    ($type: ($pick: hsl(join(
+                        $content,
+                        (), space
+                    ))))
+                ) !global;
+
+                --#{$type}-#{$pick}: #{$content}; /* Sirve por si se quiere cambiar la opacidad */
+            }
+        }
+    } @else {
+        @each $gr, $value-gr in $value {
+            $type-gr: map-get($color-base, gradient, $gr, type);
+            $ang: map-get($color-base, gradient, $gr, ang);
+            $color-gr: ();
+
+            :root {
+                @each $pick in map-get($color-base, gradient, $gr, color) {
+                    $i: index(map-get($color-base, gradient, $gr, color), $pick);
+                    $color-gr: join($color-gr, hsl(join(
+                        $pick,
+                        (), space
+                    )), comma) !global;
+
+                    --#{$type}-#{"" + $gr}-#{$i}: #{$pick};
+                }
+            }
+
+            $content: #{$type-gr}-gradient($ang, $color-gr);
+            $color: map.deep-merge(
+                $color,
+                ($type: ($gr: $content))
+            );
+        }
+    }
+}
