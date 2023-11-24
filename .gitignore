@@ -3,7 +3,6 @@
 
 ### Personal ###
 /node_modules
-/sass
 /TEST
 /package.json
 /package-lock.json
