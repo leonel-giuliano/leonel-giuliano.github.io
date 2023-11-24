@@ -97,11 +97,14 @@ html {
 body {
   font-family: "Manrope";
   font-weight: 500;
-  line-height: 2rem;
+  line-height: 1.75rem;
+}
+
+[weight=bold] {
+  font-weight: 700;
 }
 
 .title {
-  font-weight: 700;
   font-size: 1.25rem;
 }
 
@@ -109,6 +112,7 @@ body {
   width: 100%;
   min-height: 100dvh;
   background-color: hsl(210, 46%, 95%);
+  color: hsl(214, 17%, 51%);
 }
 
 .grid-flow {
@@ -116,18 +120,32 @@ body {
   place-items: center;
 }
 
+.flex-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 main {
   box-sizing: border-box;
   grid-template-rows: 40%;
-  grid-template-columns: 2rem auto 2rem;
+  grid-template-columns: 2.5rem auto 2.5rem;
   width: 80%;
   height: 80%;
   background-color: hsl(0, 0%, 100%);
   border-radius: 1rem;
   overflow-y: hidden;
 }
-main > * {
+main * {
   grid-column: 2/3;
+}
+
+[weight=bold] {
+  color: hsl(217, 19%, 35%);
+}
+
+.title {
+  margin-bottom: 1rem;
 }
 
 .cover {
@@ -137,8 +155,31 @@ main > * {
   object-fit: cover;
 }
 
+.user {
+  width: 100%;
+}
+
 .avatar {
   height: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.user-desc {
+  width: 65%;
+}
+.user-desc > span {
+  display: inline-block;
+  width: 100%;
+}
+
+.share-wrapper {
+  display: grid;
+  place-content: center;
+  width: 3rem;
+  aspect-ratio: 1/1;
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
