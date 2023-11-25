@@ -168,7 +168,7 @@ main * {
 .user-desc {
   width: 65%;
 }
-.user-desc > span {
+.user-desc span {
   display: inline-block;
   width: 100%;
 }
