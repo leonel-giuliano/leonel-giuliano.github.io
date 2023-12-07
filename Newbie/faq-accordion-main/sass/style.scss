@@ -34,11 +34,11 @@ body {
 }
 
 main {
-    --_gap: 1rem;
+    --_gap: 1.25rem;
 
     box-sizing: border-box;
     gap: var(--_gap);
-    width: 25rem;
+    width: clamp(1rem, 90%, 40rem);
     margin-inline: 1rem;
     padding: 1.25rem;
     background-color: map-get(
@@ -47,17 +47,35 @@ main {
         white
     );
     border-radius: .5rem;
+    box-shadow: 0 1rem 2rem 0 hsla(var(--primary-gray-purple), .3);
 }
 
 .title-wrapper {
-    width: 10rem;
+    width: 8rem;
+}
+
+.star {
+    width: 1.75rem;
+    aspect-ratio: 1 / 1;
+}
+
+.sections-container {
+    grid-template-rows: repeat(4, 1fr);
+    gap: var(--_gap);
 }
 
 .sections-wrapper {
-    grid-template-rows: 1fr 0fr;
+    position: relative;
+    grid-template-rows: auto 0fr;
+    height: 100%;
 
-    &:not(:first-child) {
-        border-top: abstracts.pxRem(3px) solid map-get(
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: calc(var(--_gap)/-2);
+        width: 100%;
+        height: abstracts.pxRem(2px);
+        background-color: map-get(
             abstracts.$color,
             primary,
             li-pink
@@ -66,19 +84,65 @@ main {
 }
 
 .question {
-    width: 15em;
+    width: clamp(abstracts.pxRem(203px), 70%, 30rem);
 }
 
-.more-wrapper > * {
-    width: 2.25rem;
+.more-button {
+    --_tran-duration: .5s;
+
+    width: 1.75rem;
     aspect-ratio: 1 / 1;
+    padding: 0;
+    border: none;
+    background-color: map-get(
+        abstracts.$color,
+        primary,
+        li-purple
+    );
+    border-radius: 50%;
+    transition: background var(--_tran-duration) ease-in;
 }
 
-.minus {
-    display: none;
+.more {
+    fill: map-get(
+        abstracts.$color,
+        primary,
+        white
+    );
+}
+
+.line {
+    transition: 
+        rotate var(--_tran-duration) ease-in-out,
+        opacity var(--_tran-duration) ease-in-out;
+    transform-origin: center;
+}
+
+.more-button:hover { /* CAMBIAR PARA JS */
+    background-color: map-get(
+        abstracts.$color,
+        primary,
+        dark-purple
+    );
+
+    .y-axis {
+        rotate: -90deg;
+        opacity: 0;
+    }
+}
+
+.sections-wrapper.active {
+    grid-template-rows: auto 1fr;
+    gap: var(--_gap);
+    padding-bottom: var(--_gap);
 }
 
 .answer {
     height: 100%;
     overflow: hidden;
+    color: map-get(
+        abstracts.$color,
+        primary,
+        gray-purple
+    );
 }
