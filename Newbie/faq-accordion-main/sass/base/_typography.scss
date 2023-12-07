@@ -1,0 +1,36 @@
+@use '../abstracts/variables';
+
+@font-face {
+    font-family: 'Work Sans';
+    font-display: swap;
+    src: local('Work Sans'),
+        url('/Newbie/faq-accordion-main/assets/fonts/WorkSans-VariableFont.woff') format('.woff'),
+        url('/Newbie/faq-accordion-main/assets/fonts/WorkSans-VariableFont.woff2') format('.woff2');
+    font-weight: 100 1000;
+}
+
+html {
+    font-size: map-get(
+        variables.$font,
+        size
+    );
+}
+
+body {
+    font-family: map-get(
+        variables.$font,
+        family
+    );
+    line-height: 1.25rem;
+}
+
+@each $w, $value in map-get(
+    variables.$font,
+    weight
+) {
+    [weight="#{$w}"] { font-weight: $value; }
+}
+
+.title { font-size: 1.875rem; }
+
+.answer { font-size: 0.8rem; }

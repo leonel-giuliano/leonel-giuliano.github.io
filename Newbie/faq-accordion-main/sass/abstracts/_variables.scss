@@ -1,7 +1,12 @@
 @use 'sass:map';
 
 $color-base: ( /* Los colores van como "(0, 0%, 0%)," */
-
+    primary: (
+        white: (0, 0%, 100%),
+        li-pink: (275, 100%, 97%),
+        gray-purple: (292, 16%, 49%),
+        dark-purple: (292, 42%, 14%)
+    )
 );
 
 /* GRADIENT: la estructura es como:
@@ -18,10 +23,12 @@ $color-base: ( /* Los colores van como "(0, 0%, 0%)," */
 $color: (); /* Es el que se usa en el cod. a menos que se cambia por "hsla()" */
 
 $font: (
-    size: ,
-    family: ,
+    size: 16px,
+    family: 'Work Sans',
     weight: (
-
+        regular: 400,
+        semi-bold: 600,
+        bold: 700
     ),
 );
 

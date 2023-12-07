@@ -1,0 +1,84 @@
+@use './base';
+@use './abstracts';
+
+body {
+    justify-items: center;
+    width: 100%;
+    min-height: 100svh;
+    background: {
+        color: map-get(
+            abstracts.$color,
+            primary,
+            li-pink
+        );
+        image: url(../assets/images/background-pattern-mobile.svg);
+        repeat: no-repeat;
+        size: 100%;
+        position: top;
+    };
+
+    @media only screen and (min-width: abstracts.pxRem(630px)) {
+        background-image: url('../assets/images/background-pattern-desktop.svg');
+    }
+}
+
+.grid-flow {
+    display: grid;
+    align-items: center;
+}
+
+.flex-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    --_gap: 1rem;
+
+    box-sizing: border-box;
+    gap: var(--_gap);
+    width: 25rem;
+    margin-inline: 1rem;
+    padding: 1.25rem;
+    background-color: map-get(
+        abstracts.$color,
+        primary,
+        white
+    );
+    border-radius: .5rem;
+}
+
+.title-wrapper {
+    width: 10rem;
+}
+
+.sections-wrapper {
+    grid-template-rows: 1fr 0fr;
+
+    &:not(:first-child) {
+        border-top: abstracts.pxRem(3px) solid map-get(
+            abstracts.$color,
+            primary,
+            li-pink
+        );
+    }
+}
+
+.question {
+    width: 15em;
+}
+
+.more-wrapper > * {
+    width: 2.25rem;
+    aspect-ratio: 1 / 1;
+}
+
+.minus {
+    display: none;
+}
+
+.answer {
+    height: 100%;
+    overflow: hidden;
+}

@@ -1,0 +1,192 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+/* GRADIENT: la estructura es como:
+    white: (
+        type: 'linear',
+        ang: 135deg,
+        color: (
+            (0, 0%, 100%), // El orden det. la dir.
+            (0, 100%, 98%)
+        ),
+    )
+*/
+/* Es el que se usa en el cod. a menos que se cambia por "hsla()" */
+/* Cód. para pasar de "$color-base" a "$color" */
+:root {
+  --primary-white: 0, 0%, 100%; /* Sirve por si se quiere cambiar la opacidad */
+  --primary-li-pink: 275, 100%, 97%; /* Sirve por si se quiere cambiar la opacidad */
+  --primary-gray-purple: 292, 16%, 49%; /* Sirve por si se quiere cambiar la opacidad */
+  --primary-dark-purple: 292, 42%, 14%; /* Sirve por si se quiere cambiar la opacidad */
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-display: swap;
+  src: local("Work Sans"), url("/Newbie/faq-accordion-main/assets/fonts/WorkSans-VariableFont.woff") format(".woff"), url("/Newbie/faq-accordion-main/assets/fonts/WorkSans-VariableFont.woff2") format(".woff2");
+  font-weight: 100 1000;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Work Sans";
+  line-height: 1.25rem;
+}
+
+[weight=regular] {
+  font-weight: 400;
+}
+
+[weight=semi-bold] {
+  font-weight: 600;
+}
+
+[weight=bold] {
+  font-weight: 700;
+}
+
+.title {
+  font-size: 1.875rem;
+}
+
+.answer {
+  font-size: 0.8rem;
+}
+
+body {
+  justify-items: center;
+  width: 100%;
+  min-height: 100svh;
+  background-color: hsl(275, 100%, 97%);
+  background-image: url(../assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+}
+@media only screen and (min-width: 39.375rem) {
+  body {
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+  }
+}
+
+.grid-flow {
+  display: grid;
+  align-items: center;
+}
+
+.flex-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  --_gap: 1rem;
+  box-sizing: border-box;
+  gap: var(--_gap);
+  width: 25rem;
+  margin-inline: 1rem;
+  padding: 1.25rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+}
+
+.title-wrapper {
+  width: 10rem;
+}
+
+.sections-wrapper {
+  grid-template-rows: 1fr 0fr;
+}
+.sections-wrapper:not(:first-child) {
+  border-top: 0.1875rem solid hsl(275, 100%, 97%);
+}
+
+.question {
+  width: 15em;
+}
+
+.more-wrapper > * {
+  width: 2.25rem;
+  aspect-ratio: 1/1;
+}
+
+.minus {
+  display: none;
+}
+
+.answer {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */
