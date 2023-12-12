@@ -33,6 +33,10 @@ $font: (
     ),
 );
 
+$main-gap: 1.25rem;
+$tran-duration: .5s;
+$tran-function: ease-in-out;
+
 /* Cód. para pasar de "$color-base" a "$color" */
 
 @each $type, $value in $color-base {

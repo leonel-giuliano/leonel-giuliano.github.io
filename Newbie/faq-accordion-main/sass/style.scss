@@ -1,6 +1,8 @@
 @use './base';
 @use './abstracts';
 
+@use 'sass:math';
+
 body {
     justify-items: center;
     width: 100%;
@@ -34,10 +36,8 @@ body {
 }
 
 main {
-    --_gap: 1.25rem;
-
     box-sizing: border-box;
-    gap: var(--_gap);
+    gap: abstracts.$main-gap;
     width: clamp(1rem, 90%, 40rem);
     margin-inline: 1rem;
     padding: 1.25rem;
@@ -61,18 +61,20 @@ main {
 
 .sections-container {
     grid-template-rows: repeat(4, 1fr);
-    gap: var(--_gap);
+    gap: abstracts.$main-gap;
+    // transition: grid-template-rows abstracts.$tran-duration abstracts.$tran-function;
 }
 
 .sections-wrapper {
     position: relative;
-    grid-template-rows: auto 0fr;
+    grid-template-rows: 1fr 0fr;
     height: 100%;
+    transition: grid-template-rows abstracts.$tran-duration abstracts.$tran-function;
 
     &:not(:last-child)::after {
         content: '';
         position: absolute;
-        bottom: calc(var(--_gap)/-2);
+        bottom: math.div(abstracts.$main-gap, -2);
         width: 100%;
         height: abstracts.pxRem(2px);
         background-color: map-get(
@@ -88,8 +90,6 @@ main {
 }
 
 .more-button {
-    --_tran-duration: .5s;
-
     width: 1.75rem;
     aspect-ratio: 1 / 1;
     padding: 0;
@@ -100,7 +100,7 @@ main {
         li-purple
     );
     border-radius: 50%;
-    transition: background var(--_tran-duration) ease-in;
+    transition: background abstracts.$tran-duration abstracts.$tran-function;
 }
 
 .more {
@@ -113,12 +113,12 @@ main {
 
 .line {
     transition: 
-        rotate var(--_tran-duration) ease-in-out,
-        opacity var(--_tran-duration) ease-in-out;
+        rotate abstracts.$tran-duration abstracts.$tran-function,
+        opacity abstracts.$tran-duration abstracts.$tran-function;
     transform-origin: center;
 }
 
-.more-button:hover { /* CAMBIAR PARA JS */
+.more-button[aria-pressed="true"] {
     background-color: map-get(
         abstracts.$color,
         primary,
@@ -133,16 +133,14 @@ main {
 
 .sections-wrapper.active {
     grid-template-rows: auto 1fr;
-    gap: var(--_gap);
-    padding-bottom: var(--_gap);
 }
 
 .answer {
     height: 100%;
-    overflow: hidden;
     color: map-get(
         abstracts.$color,
         primary,
         gray-purple
-    );
+        );
+    overflow: hidden;
 }
