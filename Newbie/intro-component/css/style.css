@@ -1,0 +1,280 @@
+:root {
+  --clr-primary-100: 324, 100%, 74%;
+  --clr-primary-200: 11, 100%, 74%;
+  --clr-primary-300: 0, 100%, 74%;
+  --clr-primary-400: 294, 100%, 74%;
+  --clr-primary-500: 21, 100%, 74%;
+  --clr-header-100: 229, 32%, 49%;
+  --clr-header-200: 268, 32%, 49%;
+  --clr-header-300: 248, 32%, 49%;
+  --clr-header-400: 210, 32%, 49%;
+  --clr-header-500: 287, 32%, 49%;
+  --clr-button-100: 134, 59%, 51%;
+  --clr-button-200: 174, 59%, 51%;
+  --clr-button-300: 154, 59%, 51%;
+  --clr-button-400: 112, 59%, 51%;
+  --clr-button-500: 194, 59%, 51%;
+  --clr-input-100: 231, 10%, 26%;
+  --clr-input-200: 268, 10%, 26%;
+  --clr-input-300: 249, 10%, 26%;
+  --clr-input-400: 212, 10%, 26%;
+  --clr-input-500: 286, 10%, 26%;
+  --clr-terms-100: 226, 26%, 77%;
+  --clr-terms-200: 266, 26%, 77%;
+  --clr-terms-300: 246, 25%, 77%;
+  --clr-terms-400: 208, 26%, 77%;
+  --clr-terms-500: 284, 26%, 77%;
+  --clr-hsl-primary-100: hsl(324, 100%, 74%);
+  --clr-hsl-primary-200: hsl(11, 100%, 74%);
+  --clr-hsl-primary-300: hsl(0, 100%, 74%);
+  --clr-hsl-primary-400: hsl(294, 100%, 74%);
+  --clr-hsl-primary-500: hsl(21, 100%, 74%);
+  --clr-hsl-header-100: hsl(229, 32%, 49%);
+  --clr-hsl-header-200: hsl(268, 32%, 49%);
+  --clr-hsl-header-300: hsl(248, 32%, 49%);
+  --clr-hsl-header-400: hsl(210, 32%, 49%);
+  --clr-hsl-header-500: hsl(287, 32%, 49%);
+  --clr-hsl-button-100: hsl(134, 59%, 51%);
+  --clr-hsl-button-200: hsl(174, 59%, 51%);
+  --clr-hsl-button-300: hsl(154, 59%, 51%);
+  --clr-hsl-button-400: hsl(112, 59%, 51%);
+  --clr-hsl-button-500: hsl(194, 59%, 51%);
+  --clr-hsl-input-100: hsl(231, 10%, 26%);
+  --clr-hsl-input-200: hsl(268, 10%, 26%);
+  --clr-hsl-input-300: hsl(249, 10%, 26%);
+  --clr-hsl-input-400: hsl(212, 10%, 26%);
+  --clr-hsl-input-500: hsl(286, 10%, 26%);
+  --clr-hsl-terms-100: hsl(226, 26%, 77%);
+  --clr-hsl-terms-200: hsl(266, 26%, 77%);
+  --clr-hsl-terms-300: hsl(246, 25%, 77%);
+  --clr-hsl-terms-400: hsl(208, 26%, 77%);
+  --clr-hsl-terms-500: hsl(284, 26%, 77%);
+  --ff-400: Poppins, sans-serif;
+  --fs-400: 0.6rem;
+  --fs-500: 0.8rem;
+  --fs-600: 1rem;
+  --fs-700: 1.5rem;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: local("Poppins Regular"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff2") format("woff2"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: local("Poppins Regular"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff2") format("woff2"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: local("Poppins Medium"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Medium.woff2") format("woff2"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: local("Poppins SemiBold"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-SemiBold.woff2") format("woff2"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: local("Poppins Bold"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Bold.woff2") format("woff2"), url("/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Bold.woff") format("woff");
+}
+body {
+  font-family: var(--ff-400);
+  font-size: var(--fs-500);
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+[weight=regular] {
+  font-weight: var(--fw-regular);
+}
+
+[weight=medium] {
+  font-weight: var(--fw-medium);
+}
+
+[weight=semi-bold] {
+  font-weight: var(--fw-semi-bold);
+}
+
+[weight=bold] {
+  font-weight: var(--fw-bold);
+}
+
+.title {
+  font-size: var(--fs-700);
+}
+
+.title,
+header {
+  text-wrap: wrap;
+}
+
+header,
+form input {
+  font-size: var(--fs-600);
+}
+
+[type=submit] {
+  letter-spacing: 0.1ch;
+  text-transform: uppercase;
+}
+
+.grid-flow {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.flex-flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+
+header {
+  box-sizing: border-box;
+  padding: 1rem 4rem;
+  background-color: var(--clr-hsl-header-300);
+  border-radius: var(--_border-radius);
+}
+
+form {
+  box-sizing: border-box;
+  padding: 1.25rem;
+  background-color: hsl(0, 0%, 100%);
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.75rem 1.75rem;
+  color: var(--clr-hsl-input-300);
+  background-color: transparent;
+  border-radius: 0.375rem;
+  border: 0.0625rem solid var(--clr-hsl-terms-300);
+  outline: none;
+}
+input::placeholder {
+  color: var(--clr-hsl-input-300);
+}
+input:focus {
+  border: 0.0625rem solid var(--clr-hsl-input-500);
+}
+
+[type=submit] {
+  --_shadow: 154, 59%, 45%;
+  color: hsl(0, 0%, 100%);
+  background-color: var(--clr-hsl-button-300);
+  border: none;
+  box-shadow: 0 0.25rem 0 hsl(var(--_shadow));
+}
+[type=submit]:focus {
+  border: none;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100svh;
+  padding-inline: 1.5rem;
+  background-color: var(--clr-hsl-primary-300);
+  background-image: url("../assets/images/bg-intro-mobile.png");
+}
+
+header,
+form {
+  border-radius: 0.5rem;
+  box-shadow: 0 0.415rem 0 0 hsl(var(--clr-input-200), 0.4);
+}
+
+.terms {
+  color: var(--clr-hsl-terms-300);
+}
+.terms span {
+  color: var(--clr-hsl-primary-300);
+}
+
+/*# sourceMappingURL=style.css.map */

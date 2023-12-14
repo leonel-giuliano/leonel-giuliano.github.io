@@ -1,0 +1,22 @@
+@use './colors';
+@use './fonts';
+
+:root {
+    @each $pick, $cont in colors.$colors {
+        @each $num, $value in $cont {
+            --clr-#{$pick}-#{$num}: #{$value};
+        }
+    }
+
+    @each $pick, $cont in colors.$colors {
+        @each $num, $value in $cont {
+            --clr-hsl-#{$pick}-#{$num}: hsl(#{$value});
+        }
+    }
+
+    @each $prop, $cont in fonts.$fonts {
+        @each $num, $value in $cont {
+            --f#{str-slice($prop, 1, 1)}-#{$num}: #{$value};
+        }
+    }
+}

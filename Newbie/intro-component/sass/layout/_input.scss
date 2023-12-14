@@ -1,0 +1,34 @@
+@use '../abstracts/functions';
+@use '../abstracts/colors';
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .75rem 1.75rem;
+    color: var(--clr-hsl-input-300);
+    background-color: transparent;
+    border-radius: .375rem;
+    border: functions.pxRem(1) solid var(--clr-hsl-terms-300);
+    outline: none;
+
+    &::placeholder { color: var(--clr-hsl-input-300); }
+
+    &:focus {
+        border: functions.pxRem(1) solid var(--clr-hsl-input-500);
+    }
+}
+
+[type="submit"] {
+    --_shadow: #{set-nth(map-get(
+        colors.$colors,
+        button,
+        300
+    ), 3, 45%)};
+
+    color: hsl(0, 0%, 100%);
+    background-color: var(--clr-hsl-button-300);
+    border: none;
+    box-shadow: 0 .25rem 0 hsl(var(--_shadow));
+
+    &:focus { border: none; }
+}

@@ -1,0 +1,28 @@
+@use './abstracts';
+@use './base';
+@use './layout';
+
+html { color-scheme: dark; }
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100svh;
+    padding-inline: 1.5rem;
+    background: {
+        color: var(--clr-hsl-primary-300);
+        image: url('../assets/images/bg-intro-mobile.png');
+    }
+}
+
+header,
+form {
+    border-radius: .5rem;
+    box-shadow: 0 .415rem 0 0 hsl(var(--clr-input-200), .4);
+}
+
+.terms {
+    color: var(--clr-hsl-terms-300);
+
+    span { color: var(--clr-hsl-primary-300); }
+}

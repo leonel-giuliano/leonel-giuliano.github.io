@@ -1,0 +1,68 @@
+@use '../abstracts/fonts';
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: local('Poppins Regular'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff2') format('woff2'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: local('Poppins Regular'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff2') format('woff2'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 500;
+    src: local('Poppins Medium'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Medium.woff2') format('woff2'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 600;
+    src: local('Poppins SemiBold'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-SemiBold.woff2') format('woff2'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-SemiBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 700;
+    src: local('Poppins Bold'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Bold.woff2') format('woff2'),
+        url('/Newbie/intro-component/assets/fonts/Poppins/WebFonts/Poppins-Bold.woff') format('woff');
+}
+
+body {
+    font-family: var(--ff-400);
+    font-size: var(--fs-500);
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+@each $weight, $value in map-get(
+    fonts.$fonts,
+    weights
+) {
+    [weight="#{$weight}"] { font-weight: var(--fw-#{$weight}); }
+}
+
+.title { font-size: var(--fs-700); }
+
+.title,
+header { text-wrap: wrap; }
+
+header,
+form input { font-size: var(--fs-600); }
+
+[type="submit"] {
+    letter-spacing: .1ch;
+    text-transform: uppercase;
+}
