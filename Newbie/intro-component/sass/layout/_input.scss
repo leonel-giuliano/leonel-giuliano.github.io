@@ -5,30 +5,24 @@ input {
     box-sizing: border-box;
     width: 100%;
     padding: .75rem 1.75rem;
-    color: var(--clr-hsl-input-300);
+    color: var(--clr-hsl-input-200);
     background-color: transparent;
     border-radius: .375rem;
-    border: functions.pxRem(1) solid var(--clr-hsl-terms-300);
+    border: functions.pxRem(1) solid var(--clr-hsl-terms-700);
     outline: none;
 
-    &::placeholder { color: var(--clr-hsl-input-300); }
+    &::placeholder { color: var(--clr-hsl-input-200); }
 
     &:focus {
-        border: functions.pxRem(1) solid var(--clr-hsl-input-500);
+        border: functions.pxRem(1) solid var(--clr-hsl-input-200);
     }
 }
 
 [type="submit"] {
-    --_shadow: #{set-nth(map-get(
-        colors.$colors,
-        button,
-        300
-    ), 3, 45%)};
-
     color: hsl(0, 0%, 100%);
-    background-color: var(--clr-hsl-button-300);
+    background-color: var(--clr-hsl-button-500);
     border: none;
-    box-shadow: 0 .25rem 0 hsl(var(--_shadow));
+    box-shadow: 0 .25rem 0 var(--clr-hsl-button-400);
 
     &:focus { border: none; }
 }

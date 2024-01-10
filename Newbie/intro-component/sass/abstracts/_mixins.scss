@@ -1,0 +1,9 @@
+@use './functions';
+
+$breakpoint: functions.pxRem(710);
+
+@mixin mq() {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+}

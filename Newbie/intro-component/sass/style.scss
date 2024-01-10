@@ -8,21 +8,32 @@ body {
     box-sizing: border-box;
     width: 100%;
     min-height: 100svh;
-    padding-inline: 1.5rem;
+    padding: 1.75rem;
     background: {
-        color: var(--clr-hsl-primary-300);
+        color: var(--clr-hsl-primary-700);
         image: url('../assets/images/bg-intro-mobile.png');
     }
+
+    @include abstracts.mq() {
+        grid-auto-flow: column;
+        background-image: url('../assets/images/bg-intro-desktop.png');
+    }
 }
+
+article {
+    max-width: 25rem;
+}
+
+.title { max-width: 15rem; }
 
 header,
 form {
     border-radius: .5rem;
-    box-shadow: 0 .415rem 0 0 hsl(var(--clr-input-200), .4);
+    box-shadow: 0 .5rem 0 0 hsl(var(--clr-input-200), .375);
 }
 
 .terms {
-    color: var(--clr-hsl-terms-300);
+    color: var(--clr-hsl-terms-700);
 
-    span { color: var(--clr-hsl-primary-300); }
+    span { color: var(--clr-hsl-primary-700); }
 }
