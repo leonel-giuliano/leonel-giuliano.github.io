@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technovibe</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/62b0ecdfad.js" crossorigin="anonymous"></script>
+</head>
+<body class="grid-flow">
+    <header class="flex-flow">
+        <button class="bars-wrapper">
+            <svg class="bars" viewBox="0 0 100 100" visible="mobile">
+                <rect class="bars__line bars__line-1"></rect>
+                <rect class="bars__line bars__line-2"></rect>
+                <rect class="bars__line bars__line-3"></rect>
+            </svg>
+
+            <svg class="bars-background" viewBox="0 0 100 100" visible="mobile">
+                <rect class="bars__line bars__line-1"></rect>
+                <rect class="bars__line bars__line-2"></rect>
+                <rect class="bars__line bars__line-3"></rect>
+            </svg>
+        </button>
+
+        <div class="logo-mask"></div>
+
+        <nav>
+            <ul class="link-wrapper grid-flow">
+                <i class="fa-solid fa-gamepad link-icon"></i>
+                <a href="#" class="link" visible="mobile">Profile</a>
+
+                <i class="fa-solid fa-house link-icon" visible="mobile"></i>
+                <a href="#" class="link">House</a>
+
+                <i class="fa-solid fa-play link-icon" visible="mobile"></i>
+                <a href="#" class="link">Games</a>
+
+                <i class="fa-solid fa-microchip link-icon" visible="mobile"></i>
+                <a href="#" class="link">Hardware</a>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="grid-flow">
+        <h1 class="title">Start</h1>
+
+        <article class="desc grid-flow">
+            <p class="desc__p">
+                Welcome to the thrilling gaming community!
+            </p>
+
+            <p class="desc__p">
+                Ready to dive into the fascinating world of gaming?
+            </p>
+
+            <p class="desc__p">
+                Get ready for action, strategy, and endless fun!
+            </p>
+
+            <p class="desc__p">
+                Click the search button and explore a new universe that await you
+            </p>
+
+            <p class="desc__p">
+                Your next big gaming experience is just a click away!
+            </p>
+        </article>
+
+        <div class="search-bar flex-flow">
+            <input type="text" class="search-input" placeholder="Games and Hardware...">
+
+            <button class="search-icon grid-flow">
+                <i class="fa-solid fa-search"></i>
+            </button>
+        </div>
+    </main>
+
+    <footer class="flex-flow">
+        <h3 class="eslogan" visible="desktop">Level up your reality</h3>
+
+        <ul class="sitemap flex-flow">
+            <h6 class="sitemap-link">License</h6>
+
+            <h6 class="sitemap-link">Terms of Service</h6>
+
+            <h6 class="sitemap-link">Privacy Police</h6>
+
+            <h6 class="sitemap-link">Refunds</h6>
+        </ul>
+    </footer>
+</body>
+</html>

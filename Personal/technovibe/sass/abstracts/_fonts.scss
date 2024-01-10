@@ -1,0 +1,21 @@
+$fonts: (
+    family: (
+        100: ('Joystix', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace),
+        200: ('Outfit', ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif),
+    ),
+
+    sizes: (
+        200: .688rem,
+        300: 1rem,
+        400: 1.188rem,
+        500: 1.25rem,
+        600: 1.75rem,
+        700: 2.438rem,
+        900: 3.812rem,
+    ),
+
+    weights: (
+        regular: 400,
+        bold: 700,
+    ),
+);

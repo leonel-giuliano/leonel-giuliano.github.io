@@ -1,0 +1,57 @@
+@use './colors';
+@use './fonts';
+@use './functions';
+
+:root {
+    @each $solid, $cont in colors.$colors {
+        @each $solid-num, $solid-value in $cont {
+            @if $solid != 'gradients' {
+                --clr-#{$solid}-#{$solid-num}: #{$solid-value};
+            }
+        }
+    }
+
+    @each $solid, $cont in colors.$colors {
+        @each $solid-num, $solid-value in $cont {
+            @if $solid != 'gradients' {
+                --hsl-#{$solid}-#{$solid-num}: hsl(var(--clr-#{$solid}-#{$solid-num}));
+            } @else {
+                $gr-type: ();
+                $gr-cont: ();
+
+                @each $prop, $prop-value in $solid-value {
+                    @if $prop == 'ang' {
+                        --gr-#{$solid-num}-#{$prop}: #{$prop-value};
+
+                        $gr-cont: append(
+                            $gr-cont,
+                            var(--gr-#{$solid-num}-#{$prop}),
+                            comma
+                        );
+                    } @else if $prop == 'type' { $gr-type: $prop-value; }
+                    @else {
+                        $gr-cont: append(
+                            $gr-cont,
+                            var(--hsl-#{$prop-value})
+                        );
+                    }
+                }
+
+                --gr-#{$solid-num}: #{$gr-type}-gradient(#{$gr-cont});
+            }
+        }
+    }
+
+    @each $prop, $cont in fonts.$fonts {
+        @each $num, $value in $cont {
+            --f#{str-slice($prop, 1, 1)}-#{$num}: #{$value};
+        }
+    }
+
+    --bg-color: var(--hsl-primary-700);
+    --tran-duration: .375s;
+
+    --focus-outline-width: #{functions.pxRem(3)};
+    --focus-outline: var(--focus-outline-width) solid var(--hsl-primary-300);
+    --focus-outline-offset: #{functions.pxRem(6)};
+}

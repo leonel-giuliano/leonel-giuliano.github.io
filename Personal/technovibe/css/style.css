@@ -1,0 +1,513 @@
+:root {
+  --clr-primary-50: 244, 73%, 96%;
+  --clr-primary-100: 244, 76%, 87%;
+  --clr-primary-200: 242, 76%, 81%;
+  --clr-primary-300: 243, 75%, 72%;
+  --clr-primary-400: 242, 75%, 66%;
+  --clr-primary-500: 243, 75%, 58%;
+  --clr-primary-600: 242, 60%, 52%;
+  --clr-primary-700: 243, 55%, 41%;
+  --clr-primary-800: 243, 55%, 32%;
+  --clr-primary-900: 243, 55%, 24%;
+  --clr-brick-50: 18, 83%, 95%;
+  --clr-brick-100: 17, 81%, 85%;
+  --clr-brick-200: 17, 80%, 78%;
+  --clr-brick-300: 17, 80%, 68%;
+  --clr-brick-400: 17, 80%, 62%;
+  --clr-brick-500: 17, 80%, 52%;
+  --clr-brick-600: 17, 73%, 48%;
+  --clr-brick-700: 17, 73%, 37%;
+  --clr-brick-800: 17, 73%, 29%;
+  --clr-brick-900: 18, 73%, 22%;
+  --clr-search-first-50: 300, 65%, 95%;
+  --clr-search-first-100: 304, 69%, 86%;
+  --clr-search-first-200: 303, 68%, 79%;
+  --clr-search-first-300: 302, 68%, 70%;
+  --clr-search-first-400: 302, 68%, 64%;
+  --clr-search-first-500: 303, 68%, 55%;
+  --clr-search-first-600: 303, 56%, 50%;
+  --clr-search-first-700: 303, 57%, 39%;
+  --clr-search-first-800: 303, 56%, 30%;
+  --clr-search-first-900: 303, 56%, 23%;
+  --clr-search-second-50: 261, 54%, 95%;
+  --clr-search-second-100: 260, 51%, 84%;
+  --clr-search-second-200: 260, 51%, 76%;
+  --clr-search-second-300: 260, 51%, 65%;
+  --clr-search-second-400: 260, 51%, 58%;
+  --clr-search-second-500: 260, 55%, 48%;
+  --clr-search-second-600: 260, 55%, 44%;
+  --clr-search-second-700: 260, 55%, 34%;
+  --clr-search-second-800: 260, 56%, 26%;
+  --clr-search-second-900: 260, 55%, 20%;
+  --clr-neutral-1: 0, 0%, 100%;
+  --clr-neutral-2: 0, 0%, 99%;
+  --clr-neutral-3: 240, 5%, 96%;
+  --clr-neutral-4: 240, 7%, 95%;
+  --clr-neutral-5: 240, 6%, 86%;
+  --clr-neutral-6: 248, 7%, 77%;
+  --clr-neutral-7: 245, 6%, 59%;
+  --clr-neutral-8: 246, 10%, 41%;
+  --clr-neutral-9: 243, 13%, 34%;
+  --clr-neutral-10: 245, 22%, 23%;
+  --clr-neutral-11: 242, 25%, 20%;
+  --clr-neutral-12: 244, 33%, 16%;
+  --clr-neutral-13: 244, 65%, 9%;
+  --hsl-primary-50: hsl(var(--clr-primary-50));
+  --hsl-primary-100: hsl(var(--clr-primary-100));
+  --hsl-primary-200: hsl(var(--clr-primary-200));
+  --hsl-primary-300: hsl(var(--clr-primary-300));
+  --hsl-primary-400: hsl(var(--clr-primary-400));
+  --hsl-primary-500: hsl(var(--clr-primary-500));
+  --hsl-primary-600: hsl(var(--clr-primary-600));
+  --hsl-primary-700: hsl(var(--clr-primary-700));
+  --hsl-primary-800: hsl(var(--clr-primary-800));
+  --hsl-primary-900: hsl(var(--clr-primary-900));
+  --hsl-brick-50: hsl(var(--clr-brick-50));
+  --hsl-brick-100: hsl(var(--clr-brick-100));
+  --hsl-brick-200: hsl(var(--clr-brick-200));
+  --hsl-brick-300: hsl(var(--clr-brick-300));
+  --hsl-brick-400: hsl(var(--clr-brick-400));
+  --hsl-brick-500: hsl(var(--clr-brick-500));
+  --hsl-brick-600: hsl(var(--clr-brick-600));
+  --hsl-brick-700: hsl(var(--clr-brick-700));
+  --hsl-brick-800: hsl(var(--clr-brick-800));
+  --hsl-brick-900: hsl(var(--clr-brick-900));
+  --hsl-search-first-50: hsl(var(--clr-search-first-50));
+  --hsl-search-first-100: hsl(var(--clr-search-first-100));
+  --hsl-search-first-200: hsl(var(--clr-search-first-200));
+  --hsl-search-first-300: hsl(var(--clr-search-first-300));
+  --hsl-search-first-400: hsl(var(--clr-search-first-400));
+  --hsl-search-first-500: hsl(var(--clr-search-first-500));
+  --hsl-search-first-600: hsl(var(--clr-search-first-600));
+  --hsl-search-first-700: hsl(var(--clr-search-first-700));
+  --hsl-search-first-800: hsl(var(--clr-search-first-800));
+  --hsl-search-first-900: hsl(var(--clr-search-first-900));
+  --hsl-search-second-50: hsl(var(--clr-search-second-50));
+  --hsl-search-second-100: hsl(var(--clr-search-second-100));
+  --hsl-search-second-200: hsl(var(--clr-search-second-200));
+  --hsl-search-second-300: hsl(var(--clr-search-second-300));
+  --hsl-search-second-400: hsl(var(--clr-search-second-400));
+  --hsl-search-second-500: hsl(var(--clr-search-second-500));
+  --hsl-search-second-600: hsl(var(--clr-search-second-600));
+  --hsl-search-second-700: hsl(var(--clr-search-second-700));
+  --hsl-search-second-800: hsl(var(--clr-search-second-800));
+  --hsl-search-second-900: hsl(var(--clr-search-second-900));
+  --hsl-neutral-1: hsl(var(--clr-neutral-1));
+  --hsl-neutral-2: hsl(var(--clr-neutral-2));
+  --hsl-neutral-3: hsl(var(--clr-neutral-3));
+  --hsl-neutral-4: hsl(var(--clr-neutral-4));
+  --hsl-neutral-5: hsl(var(--clr-neutral-5));
+  --hsl-neutral-6: hsl(var(--clr-neutral-6));
+  --hsl-neutral-7: hsl(var(--clr-neutral-7));
+  --hsl-neutral-8: hsl(var(--clr-neutral-8));
+  --hsl-neutral-9: hsl(var(--clr-neutral-9));
+  --hsl-neutral-10: hsl(var(--clr-neutral-10));
+  --hsl-neutral-11: hsl(var(--clr-neutral-11));
+  --hsl-neutral-12: hsl(var(--clr-neutral-12));
+  --hsl-neutral-13: hsl(var(--clr-neutral-13));
+  --gr-search-ang: 36deg;
+  --gr-search: linear-gradient(var(--gr-search-ang), var(--hsl-search-first-300), var(--hsl-search-second-500), var(--hsl-search-first-300));
+  --ff-100: Joystix, ui-monospace, Cascadia Code, Source Code Pro, Menlo, Consolas, DejaVu Sans Mono, monospace;
+  --ff-200: Outfit, ui-rounded, Hiragino Maru Gothic ProN, Quicksand, Comfortaa, Manjari, Arial Rounded MT, Arial Rounded MT Bold, Calibri, source-sans-pro, sans-serif;
+  --fs-200: 0.688rem;
+  --fs-300: 1rem;
+  --fs-400: 1.188rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.75rem;
+  --fs-700: 2.438rem;
+  --fs-900: 3.812rem;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --bg-color: var(--hsl-primary-700);
+  --tran-duration: .375s;
+  --focus-outline-width: 0.1875rem;
+  --focus-outline: var(--focus-outline-width) solid var(--hsl-primary-300);
+  --focus-outline-offset: 0.375rem;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+@font-face {
+  font-family: "Joystix";
+  font-display: swap;
+  src: local("Joystix Monospace-Regular"), url("/Personal/technovibe/assets/fonts/joystix/JoystixMonospace-Regular.woff2") format("woff2"), url("/Personal/technovibe/assets/fonts/joystix/JoystixMonospace-Regular.woff") format("woff");
+  font-weight: 100 1000;
+}
+@font-face {
+  font-family: "Outfit";
+  src: local("Outfit Regular"), url("/Personal/technovibe/assets/fonts/outfit/web-fonts/Outfit-Regular.woff2") format("woff2"), url("/Personal/technovibe/assets/fonts/outfit/web-fonts/Outfit-Regular.woff") format("woff");
+  font-weight: 400 500;
+}
+@font-face {
+  font-family: "Outfit";
+  src: local("Outfit Bold"), url("/Personal/technovibe/assets/fonts/outfit/web-fonts/Outfit-Bold.woff2") format("woff2"), url("/Personal/technovibe/assets/fonts/outfit/web-fonts/Outfit-Bold.woff") format("woff");
+  font-weight: 700 800;
+}
+body {
+  font-family: var(--ff-200);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-300);
+  text-align: center;
+}
+
+:is(.title,
+.eslogan) {
+  font-family: var(--ff-100);
+  text-transform: uppercase;
+}
+
+.link {
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.title {
+  font-size: var(--fs-700);
+}
+
+.eslogan {
+  font-size: var(--fs-500);
+}
+
+.sitemap-link {
+  font-size: var(--fs-200);
+}
+
+.flex-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-flow {
+  display: grid;
+  place-items: center;
+}
+
+.bars-wrapper {
+  --_line-color: rgb(236, 234, 231);
+  --_wrapper-color: rgb(93, 93, 192);
+  position: relative;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+.bars-wrapper:hover ~ nav {
+  transform: translateX(0);
+}
+
+.bars {
+  position: relative;
+  cursor: pointer;
+  height: var(--fs-600);
+  fill: var(--_line-color);
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+.bars__line {
+  --_line-height: 1.25rem;
+  width: 100%;
+  height: var(--_line-height);
+  rx: 10%;
+}
+.bars__line-2 {
+  y: calc(50% - var(--_line-height) / 2);
+}
+.bars__line-3 {
+  y: calc(100% - var(--_line-height));
+}
+
+.bars-background {
+  position: absolute;
+  inset: 0;
+  fill: var(--_wrapper-color);
+  z-index: -1;
+}
+
+.logo-mask {
+  height: 2.5rem;
+  aspect-ratio: 193/43;
+  background-color: var(--_color);
+  mask-image: url("/Personal/technovibe/assets/images/logo.png");
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("/Personal/technovibe/assets/images/logo.png");
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+
+header {
+  --_padding-x: 1.25rem;
+  --_padding-y: .75rem;
+  --_color: var(--hsl-primary-200);
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  width: 100%;
+  padding: var(--_padding-y) var(--_padding-x);
+  z-index: 2;
+}
+
+nav {
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  transform: translateX(-100%);
+  transform: translateX(0);
+  width: 60%;
+  min-height: 100svh;
+  padding: 7.5rem var(--_padding-x);
+  color: var(--_color);
+  background-color: var(--hsl-primary-800);
+  transition: transform var(--tran-duration) cubic-bezier(0.28, 0.49, 0.08, 0.84);
+}
+
+.link-wrapper {
+  grid-template-columns: max-content auto;
+  gap: 1.25rem 1rem;
+}
+
+.link-icon {
+  font-size: var(--fs-500);
+}
+
+.link {
+  position: relative;
+  justify-self: left;
+  color: inherit;
+}
+.link::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 0.3125rem;
+  background-color: red;
+}
+
+.title {
+  color: transparent;
+  background-clip: text;
+  background-image: url("/Personal/technovibe/assets/images/brick-pattern.png");
+  background-size: 150%;
+  background-position: center;
+  -webkit-background-clip: text;
+  filter: drop-shadow(0 0.25rem var(--hsl-brick-900));
+}
+
+main {
+  gap: 3rem;
+}
+
+.desc {
+  gap: 1rem;
+  margin-inline: 0.875rem;
+  color: var(--hsl-neutral-12);
+}
+
+.search-bar {
+  --_border-color: var(--hsl-primary-900);
+  --_outline: .25rem;
+  position: relative;
+  height: 2.75rem;
+  background-color: var(--bg-color);
+  outline: var(--_outline) solid var(--_border-color);
+  outline-offset: calc(-1 * var(--_outline));
+  border-radius: 10rem;
+}
+@supports selector(:has(a)) {
+  .search-bar:has(.search-input:focus)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+@supports not selector(:has(a)) {
+  .search-bar:focus-within::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+.search-input {
+  width: 100%;
+  padding-left: 1.75rem;
+  color: var(--hsl-neutral-13);
+  background-color: transparent;
+  border: none;
+  border-radius: 10rem;
+}
+.search-input:focus {
+  outline: none;
+}
+
+.search-icon {
+  --_active-tran-duration: 87.5ms;
+  position: relative;
+  height: 100%;
+  aspect-ratio: 3/2;
+  font-size: 1.5rem;
+  color: var(--bg-color);
+  background-color: var(--_border-color);
+  border: none;
+  border-radius: inherit;
+  box-shadow: 0 0 0.5rem 0 var(--hsl-neutral-10);
+  z-index: 1;
+  transition: scale var(--tran-duration) cubic-bezier(0.3, -0.85, 0.33, 2.12);
+}
+.search-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--gr-search);
+  background-size: 200%;
+  background-position: right;
+  border-radius: inherit;
+  z-index: -1;
+  transition-property: background-position, opacity;
+  transition-duration: var(--tran-duration);
+}
+.search-icon:hover {
+  scale: 1.2;
+}
+.search-icon:hover::after {
+  background-position: left;
+}
+.search-icon:active {
+  scale: 1;
+  transition: var(--_active-tran-duration) ease-out;
+}
+.search-icon:active::after {
+  opacity: 0;
+  transition-duration: var(--_active-tran-duration);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 0;
+  color: var(--bg-color);
+  background-color: var(--hsl-primary-900);
+}
+
+.sitemap {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.sitemap-link {
+  transition: color var(--tran-duration);
+}
+.sitemap-link:hover {
+  color: var(--hsl-primary-200);
+}
+
+[visible=desktop] {
+  display: none;
+}
+
+*:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  padding-inline: 1.75rem;
+  background-color: var(--bg-color);
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/game-pattern.png");
+  background-size: 100%;
+  opacity: 7.5%;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=style.css.map */

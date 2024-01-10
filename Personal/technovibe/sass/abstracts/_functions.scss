@@ -1,0 +1,42 @@
+@use 'sass:math';
+
+@function pxRem($unit) {
+    $rem: math.div($unit, 16) + rem;
+
+    @return $rem;
+}
+
+@function rgbF($color-1, $color-2) {
+    $num: 255 * ($color-1 - $color-2);
+    $deno: $color-1 - 255;
+
+    $color: math.div($num, $deno);
+
+    @return $color;
+}
+
+@function blendModeX($color-c, $color-y) {
+    @if math.div($color-c, 255) < .5 {
+        $color-x: math.div(255 * $color-y, 2 * $color-c);
+
+        @return $color-x;
+    }
+
+    $num: 255 * (2 * $color-c - $color-y - 255);
+    $deno: 2 * ($color-c - 255);
+    $color-x: math.div($num, $deno);
+
+    @return $color-x;
+}
+
+@function blendModeC($color-x, $color-y) {
+    $num: 255 * (2 * $color-x - $color-y - 255);
+    $deno: 2 * ($color-x - 255);
+    $color-c: math.div($num, $deno);
+
+    @if $color-c < 0 {
+        $color-c: math.div(255 * $color-y, 2 * $color-x);
+    }
+
+    @return $color-c;
+}

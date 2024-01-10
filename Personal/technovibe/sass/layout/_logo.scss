@@ -1,0 +1,17 @@
+@use '../abstracts/functions';
+
+.logo-mask {
+    height: functions.pxRem(40);
+    aspect-ratio: 193 / 43;
+    background-color: var(--_color);
+    mask: {
+        image: url('/Personal/technovibe/assets/images/logo.png');
+        size: 100%;
+        repeat: no-repeat;
+    }
+    -webkit-mask: {
+        image: url('/Personal/technovibe/assets/images/logo.png');
+        size: 100%;
+        repeat: no-repeat;
+    }
+}

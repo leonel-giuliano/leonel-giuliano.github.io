@@ -1,0 +1,95 @@
+.search-bar {
+    --_border-color: var(--hsl-primary-900);
+    --_outline: .25rem;
+
+    position: relative;
+    height: 2.75rem;
+    background-color: var(--bg-color);
+    outline: var(--_outline) solid var(--_border-color);
+    outline-offset: calc(-1 * var(--_outline));
+    border-radius: 10rem;
+
+    @supports selector(:has(a)) {
+        &:has(.search-input:focus)::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            outline: var(--focus-outline);
+            outline-offset: var(--focus-outline-offset);
+        }
+    }
+
+    @supports not selector(:has(a)) {
+        &:focus-within::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            outline: var(--focus-outline);
+            outline-offset: var(--focus-outline-offset);
+        }
+    }
+}
+
+.search-input {
+    width: 100%;
+    padding-left: 1.75rem;
+    color: var(--hsl-neutral-13);
+    background-color: transparent;
+    border: none;
+    border-radius: 10rem;
+
+    &:focus { outline: none; }
+}
+
+.search-icon {
+    --_active-tran-duration: 87.5ms;
+
+    position: relative;
+    height: 100%;
+    aspect-ratio: 3 / 2;
+    font-size: 1.5rem;
+    color: var(--bg-color);
+    background-color: var(--_border-color);
+    border: none;
+    border-radius: inherit;
+    box-shadow: 0 0 .5rem 0 var(--hsl-neutral-10);
+    z-index: 1;
+
+    transition: scale var(--tran-duration) cubic-bezier(.3,-0.85,.33,2.12);
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: {
+            image: var(--gr-search);
+            size: 200%;
+            position: right;
+        }
+        border-radius: inherit;
+        z-index: -1;
+
+        transition: {
+            property: background-position, opacity;
+            duration: var(--tran-duration);
+        }
+    }
+
+    &:hover { scale: 1.2; }
+
+    &:hover::after { background-position: left; }
+
+    &:active {
+        scale: 1;
+
+        transition: var(--_active-tran-duration) ease-out;
+    }
+
+    &:active::after {
+        opacity: 0;
+
+        transition-duration: var(--_active-tran-duration);
+    }
+}

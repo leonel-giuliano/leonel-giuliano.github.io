@@ -1,0 +1,71 @@
+@use '../abstracts/colors';
+@use '../abstracts/functions';
+
+@use 'sass:color';
+
+.bars-wrapper {
+    $nav-color: hsl(join(map-get(
+        colors.$colors,
+        primary,
+        800
+    ), (), space));
+    $nav__bars-blend-color: hsl(join(map-get(
+        colors.$colors,
+        primary,
+        500
+    ), (), space));
+    $bars-blend-color: hsl(join(map-get(
+        colors.$colors,
+        primary,
+        200
+    ), (), space));
+
+    $bars-red: functions.blendModeX(color.red($nav-color), color.red($nav__bars-blend-color));
+    $bars-green: functions.blendModeX(color.green($nav-color), color.green($nav__bars-blend-color));
+    $bars-blue: functions.blendModeX(color.blue($nav-color), color.blue($nav__bars-blend-color));
+
+    $wrapper-red: functions.blendModeC($bars-red, color.red($bars-blend-color));
+    $wrapper-green: functions.blendModeC($bars-green, color.green($bars-blend-color));
+    $wrapper-blue: functions.blendModeC($bars-blue, color.blue($bars-blend-color));
+
+    $bars-color: rgb($bars-red, $bars-green, $bars-blue);
+    $wrapper-color: rgb($wrapper-red, $wrapper-green, $wrapper-blue);
+
+    --_line-color: #{$bars-color};
+    --_wrapper-color: #{$wrapper-color};
+
+    position: relative;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    &:hover ~ nav { transform: translateX(0); }
+}
+
+.bars {
+    position: relative;
+    cursor: pointer;
+    height: var(--fs-600);
+    fill: var(--_line-color);
+    mix-blend-mode: overlay;
+    z-index: 1;
+}
+
+.bars__line {
+    --_line-height: 1.25rem;
+
+    width: 100%;
+    height: var(--_line-height);
+    rx: 10%;
+
+    &-2 { y: calc(50% - var(--_line-height) / 2); }
+
+    &-3 { y: calc(100% - var(--_line-height)); }
+}
+
+.bars-background {
+    position: absolute;
+    inset: 0;
+    fill: var(--_wrapper-color);
+    z-index: -1;
+}

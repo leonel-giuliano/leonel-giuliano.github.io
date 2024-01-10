@@ -1,0 +1,31 @@
+@use './abstracts';
+@use './base';
+@use './layout';
+
+[visible="desktop"] { display: none; }
+
+*:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+body {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    padding-inline: 1.75rem;
+    background-color: var(--bg-color);
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: {
+        image: url('../assets/images/game-pattern.png');
+        size: 100%;
+    }
+    opacity: 7.5%;
+    z-index: -1;
+}

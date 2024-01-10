@@ -1,0 +1,19 @@
+.title {
+    color: transparent;
+    background: {
+        clip: text;
+        image: url('/Personal/technovibe/assets/images/brick-pattern.png');
+        size: 150%;
+        position: center;
+    }
+    -webkit-background-clip: text;
+    filter: drop-shadow(0 .25rem var(--hsl-brick-900));
+}
+
+main { gap: 3rem; }
+
+.desc {
+    gap: 1rem;
+    margin-inline: .875rem;
+    color: var(--hsl-neutral-12);
+}

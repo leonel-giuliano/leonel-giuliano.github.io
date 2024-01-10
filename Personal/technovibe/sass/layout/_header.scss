@@ -1,0 +1,13 @@
+header {
+    --_padding-x: 1.25rem;
+    --_padding-y: .75rem;
+    --_color: var(--hsl-primary-200);
+
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    width: 100%;
+    padding: var(--_padding-y) var(--_padding-x);
+    z-index: 2;
+}
