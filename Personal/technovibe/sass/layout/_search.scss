@@ -1,35 +1,18 @@
+@use '../abstracts/mixins';
+
 .search-bar {
-    --_border-color: var(--hsl-primary-900);
+    --_clr-border: var(--clr-primary-900);
+    --_hsl-border: hsl(var(--_clr-border));
     --_outline: .25rem;
 
     position: relative;
     height: 2.75rem;
     background-color: var(--bg-color);
-    outline: var(--_outline) solid var(--_border-color);
+    outline: var(--_outline) solid var(--_hsl-border);
     outline-offset: calc(-1 * var(--_outline));
     border-radius: 10rem;
 
-    @supports selector(:has(a)) {
-        &:has(.search-input:focus)::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            outline: var(--focus-outline);
-            outline-offset: var(--focus-outline-offset);
-        }
-    }
-
-    @supports not selector(:has(a)) {
-        &:focus-within::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            outline: var(--focus-outline);
-            outline-offset: var(--focus-outline-offset);
-        }
-    }
+    @include mixins.focusWithin;
 }
 
 .search-input {
@@ -39,6 +22,8 @@
     background-color: transparent;
     border: none;
     border-radius: 10rem;
+
+    &::placeholder { color: hsl(var(--_clr-border), .875);}
 
     &:focus { outline: none; }
 }
@@ -52,7 +37,7 @@
     margin-left: .5rem;
     font-size: 1.5rem;
     color: var(--bg-color);
-    background-color: var(--_border-color);
+    background-color: var(--_hsl-border);
     border: none;
     border-radius: inherit;
     box-shadow: 0 0 .5rem 0 var(--hsl-neutral-10);

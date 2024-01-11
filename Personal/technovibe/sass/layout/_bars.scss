@@ -1,5 +1,6 @@
 @use '../abstracts/colors';
 @use '../abstracts/functions';
+@use '../abstracts/mixins';
 
 @use 'sass:color';
 
@@ -39,12 +40,18 @@
     background-color: transparent;
     border: none;
 
+    &:focus-visible::before {
+        @include mixins.focusAbsolute();
+        
+        z-index: 1;
+    }
+
     &:hover ~ nav { transform: translateX(0); }
 }
 
 .bars {
-    position: relative;
     cursor: pointer;
+    position: relative;
     height: var(--fs-600);
     fill: var(--_line-color);
     mix-blend-mode: overlay;

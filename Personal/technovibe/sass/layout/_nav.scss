@@ -1,4 +1,5 @@
 @use '../abstracts/functions';
+@use '../abstracts/mixins';
 
 nav {
     box-sizing: border-box;
@@ -44,6 +45,10 @@ nav {
 
 .link {
     color: inherit;
+
+    &:focus { outline: none; }
+
+    &:focus-visible::before { @include mixins.focusAbsolute(); }
 
     &::after {
         content: '';

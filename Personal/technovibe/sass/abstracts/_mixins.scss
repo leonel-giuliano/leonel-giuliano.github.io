@@ -1,0 +1,18 @@
+@mixin focusAbsolute() {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+}
+
+@mixin focusWithin() {
+    @supports selector(:has(a)) {
+        &:has(.search-input:focus)::before { @include focusAbsolute(); }
+    }
+
+    @supports not selector(:has(a)) {
+        &:focus-within::before { @include focusAbsolute(); }
+    }
+}
