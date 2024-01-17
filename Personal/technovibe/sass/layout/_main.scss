@@ -10,7 +10,7 @@
     filter: drop-shadow(0 .25rem var(--hsl-brick-900));
 }
 
-main { gap: 3rem; }
+main { gap: clamp(3rem, 7.5svh, 7.5rem); }
 
 .desc {
     gap: 1rem;

@@ -3,6 +3,7 @@
 @use '../abstracts/mixins';
 
 @use 'sass:color';
+@use 'sass:math';
 
 .bars-wrapper {
     $nav-color: hsl(join(map-get(
@@ -34,6 +35,8 @@
 
     --_line-color: #{$bars-color};
     --_wrapper-color: #{$wrapper-color};
+    --_line-height: 1.25rem;
+    --_middle-line-y: calc(50% - var(--_line-height) / 2);
 
     position: relative;
     padding: 0;
@@ -46,7 +49,18 @@
         z-index: 1;
     }
 
-    &:hover ~ nav { transform: translateX(0); }
+    &:hover {
+        ~ nav { transform: translateX(0); }
+
+        .bars__line-1,
+        .bars__line-3 { y: var(--_middle-line-y); }
+
+        .bars__line-1 { transform: rotate(45deg);}
+
+        .bars__line-2 { opacity: 0; }
+
+        .bars__line-3 { transform: rotate(-45deg); }
+    }
 }
 
 .bars {
@@ -59,13 +73,22 @@
 }
 
 .bars__line {
-    --_line-height: 1.25rem;
-
     width: 100%;
     height: var(--_line-height);
     rx: 10%;
+    transform-origin: center;
 
-    &-2 { y: calc(50% - var(--_line-height) / 2); }
+    transition: {
+        property: transform, y;
+        duration: var(--_nav-tran-duration);
+        timing-function: ease-out;
+    };
+
+    &-2 {
+        y: var(--_middle-line-y);
+
+        transition-property: opacity;
+    }
 
     &-3 { y: calc(100% - var(--_line-height)); }
 }

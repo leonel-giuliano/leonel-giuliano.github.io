@@ -12,7 +12,7 @@ nav {
     background-color: var(--hsl-primary-800);
     transform: translateX(-100%);
     
-    transition: transform var(--tran-duration) cubic-bezier(.28,.49,.08,.84);
+    transition: transform var(--_nav-tran-duration) cubic-bezier(.28,.49,.08,.84);
 }
 
 .link-container{

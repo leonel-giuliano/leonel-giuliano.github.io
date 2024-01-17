@@ -1,3 +1,7 @@
+@use './functions';
+
+$breakpoints: functions.pxRem(300);
+
 @mixin focusAbsolute() {
     content: '';
     position: absolute;

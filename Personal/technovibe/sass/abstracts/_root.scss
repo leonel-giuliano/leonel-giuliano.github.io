@@ -49,7 +49,7 @@
     }
 
     --bg-color: var(--hsl-primary-700);
-    --tran-duration: .375s;
+    --tran-duration: 375ms;
 
     --focus-outline-width: #{functions.pxRem(3)};
     --focus-outline: var(--focus-outline-width) solid var(--hsl-primary-300);

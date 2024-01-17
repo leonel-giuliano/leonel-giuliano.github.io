@@ -10,7 +10,7 @@
     background-color: var(--bg-color);
     outline: var(--_outline) solid var(--_hsl-border);
     outline-offset: calc(-1 * var(--_outline));
-    border-radius: 10rem;
+    border-radius: 100vw;
 
     @include mixins.focusWithin;
 }
@@ -21,7 +21,6 @@
     color: var(--hsl-neutral-13);
     background-color: transparent;
     border: none;
-    border-radius: 10rem;
 
     &::placeholder { color: hsl(var(--_clr-border), .875);}
 
