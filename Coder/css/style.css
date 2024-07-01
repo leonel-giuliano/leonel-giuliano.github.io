@@ -1,83 +1,193 @@
 :root {
-    /* Seleccionando los parametros del hsl */
-    /* Los hice por separado en caso de usar hsla */
-    --hsl-primary-100: 200, 28%, 81%;
-    --hsl-primary-200: 199, 28%, 72%;
-    --hsl-primary-300: 200, 28%, 59%;
-    --hsl-primary-400: 201, 28%, 51%;
-    --hsl-primary-500: 200, 44%, 39%;
-    --hsl-primary-600: 200, 44%, 35%;
-    --hsl-primary-700: 200, 44%, 27%;
-    --hsl-primary-800: 200, 44%, 21%;
-    --hsl-primary-900: 201, 45%, 16%;
+  /* Seleccionando los parametros del hsl */
+  /* Los hice por separado en caso de usar hsla */
+  --hsl-primary-100: 200, 28%, 81%;
+  --hsl-primary-200: 199, 28%, 72%;
+  --hsl-primary-300: 200, 28%, 59%;
+  --hsl-primary-400: 201, 28%, 51%;
+  --hsl-primary-500: 200, 44%, 39%;
+  --hsl-primary-600: 200, 44%, 35%;
+  --hsl-primary-700: 200, 44%, 27%;
+  --hsl-primary-800: 200, 44%, 21%;
+  --hsl-primary-900: 201, 45%, 16%;
 
-    --hsl-accent-100: 350, 52%, 85%;
-    --hsl-accent-200: 349, 53%, 77%;
-    --hsl-accent-300: 349, 53%, 66%;
-    --hsl-accent-400: 349, 53%, 60%;
-    --hsl-accent-500: 349, 53%, 50%;
-    --hsl-accent-600: 350, 53%, 45%;
-    --hsl-accent-700: 349, 52%, 35%;
-    --hsl-accent-800: 349, 53%, 27%;
-    --hsl-accent-900: 349, 53%, 21%;
+  --hsl-accent-100: 350, 52%, 85%;
+  --hsl-accent-200: 349, 53%, 77%;
+  --hsl-accent-300: 349, 53%, 66%;
+  --hsl-accent-400: 349, 53%, 60%;
+  --hsl-accent-500: 349, 53%, 50%;
+  --hsl-accent-600: 350, 53%, 45%;
+  --hsl-accent-700: 349, 52%, 35%;
+  --hsl-accent-800: 349, 53%, 27%;
+  --hsl-accent-900: 349, 53%, 21%;
 
-    --hsl-neutral-100:  0, 0%, 100%;
-    --hsl-neutral-200:  0, 0%, 99%;
-    --hsl-neutral-300:  180, 5%, 96%;
-    --hsl-neutral-400:  240, 4%, 95%;
-    --hsl-neutral-500:  200, 4%, 86%;
-    --hsl-neutral-600:  200, 5%, 78%;
-    --hsl-neutral-700:  300, 2%, 61%;
-    --hsl-neutral-800:  200, 7%, 41%;
-    --hsl-neutral-900:  201, 10%, 34%;
-    --hsl-neutral-1000: 201, 17%, 24%;
-    --hsl-neutral-1100: 201, 19%, 21%;
-    --hsl-neutral-1200: 200, 24%, 17%;
-    --hsl-neutral-1300: 201, 45%, 10%;
+  --hsl-neutral-100: 0, 0%, 100%;
+  --hsl-neutral-200: 0, 0%, 99%;
+  --hsl-neutral-300: 180, 5%, 96%;
+  --hsl-neutral-400: 240, 4%, 95%;
+  --hsl-neutral-500: 200, 4%, 86%;
+  --hsl-neutral-600: 200, 5%, 78%;
+  --hsl-neutral-700: 300, 2%, 61%;
+  --hsl-neutral-800: 200, 7%, 41%;
+  --hsl-neutral-900: 201, 10%, 34%;
+  --hsl-neutral-1000: 201, 17%, 24%;
+  --hsl-neutral-1100: 201, 19%, 21%;
+  --hsl-neutral-1200: 200, 24%, 17%;
+  --hsl-neutral-1300: 201, 45%, 10%;
 
-    /* Creando los hsl para mejorar el acceso */
-    --clr-primary-100: hsl(var(--hsl-primary-100));
-    --clr-primary-200: hsl(var(--hsl-primary-200));
-    --clr-primary-300: hsl(var(--hsl-primary-300));
-    --clr-primary-400: hsl(var(--hsl-primary-400));
-    --clr-primary-500: hsl(var(--hsl-primary-500));
-    --clr-primary-600: hsl(var(--hsl-primary-600));
-    --clr-primary-700: hsl(var(--hsl-primary-700));
-    --clr-primary-800: hsl(var(--hsl-primary-800));
-    --clr-primary-900: hsl(var(--hsl-primary-900));
+  /* Creando los hsl para mejorar el acceso */
+  --clr-primary-100: hsl(var(--hsl-primary-100));
+  --clr-primary-200: hsl(var(--hsl-primary-200));
+  --clr-primary-300: hsl(var(--hsl-primary-300));
+  --clr-primary-400: hsl(var(--hsl-primary-400));
+  --clr-primary-500: hsl(var(--hsl-primary-500));
+  --clr-primary-600: hsl(var(--hsl-primary-600));
+  --clr-primary-700: hsl(var(--hsl-primary-700));
+  --clr-primary-800: hsl(var(--hsl-primary-800));
+  --clr-primary-900: hsl(var(--hsl-primary-900));
 
-    --clr-accent-100: hsl(var(--hsl-accent-100));
-    --clr-accent-200: hsl(var(--hsl-accent-200));
-    --clr-accent-300: hsl(var(--hsl-accent-300));
-    --clr-accent-400: hsl(var(--hsl-accent-400));
-    --clr-accent-500: hsl(var(--hsl-accent-500));
-    --clr-accent-600: hsl(var(--hsl-accent-600));
-    --clr-accent-700: hsl(var(--hsl-accent-700));
-    --clr-accent-800: hsl(var(--hsl-accent-800));
-    --clr-accent-900: hsl(var(--hsl-accent-900));
+  --clr-accent-100: hsl(var(--hsl-accent-100));
+  --clr-accent-200: hsl(var(--hsl-accent-200));
+  --clr-accent-300: hsl(var(--hsl-accent-300));
+  --clr-accent-400: hsl(var(--hsl-accent-400));
+  --clr-accent-500: hsl(var(--hsl-accent-500));
+  --clr-accent-600: hsl(var(--hsl-accent-600));
+  --clr-accent-700: hsl(var(--hsl-accent-700));
+  --clr-accent-800: hsl(var(--hsl-accent-800));
+  --clr-accent-900: hsl(var(--hsl-accent-900));
 
-    --clr-neutral-100: hsl(var(--hsl-neutral-100));
-    --clr-neutral-200: hsl(var(--hsl-neutral-200));
-    --clr-neutral-300: hsl(var(--hsl-neutral-300));
-    --clr-neutral-400: hsl(var(--hsl-neutral-400));
-    --clr-neutral-500: hsl(var(--hsl-neutral-500));
-    --clr-neutral-600: hsl(var(--hsl-neutral-600));
-    --clr-neutral-700: hsl(var(--hsl-neutral-700));
-    --clr-neutral-800: hsl(var(--hsl-neutral-800));
-    --clr-neutral-900: hsl(var(--hsl-neutral-900));
-    --clr-neutral-1000: hsl(var(--hsl-neutral-1000));
-    --clr-neutral-1100: hsl(var(--hsl-neutral-1100));
-    --clr-neutral-1200: hsl(var(--hsl-neutral-1200));
-    --clr-neutral-1300: hsl(var(--hsl-neutral-1300));
+  --clr-neutral-100: hsl(var(--hsl-neutral-100));
+  --clr-neutral-200: hsl(var(--hsl-neutral-200));
+  --clr-neutral-300: hsl(var(--hsl-neutral-300));
+  --clr-neutral-400: hsl(var(--hsl-neutral-400));
+  --clr-neutral-500: hsl(var(--hsl-neutral-500));
+  --clr-neutral-600: hsl(var(--hsl-neutral-600));
+  --clr-neutral-700: hsl(var(--hsl-neutral-700));
+  --clr-neutral-800: hsl(var(--hsl-neutral-800));
+  --clr-neutral-900: hsl(var(--hsl-neutral-900));
+  --clr-neutral-1000: hsl(var(--hsl-neutral-1000));
+  --clr-neutral-1100: hsl(var(--hsl-neutral-1100));
+  --clr-neutral-1200: hsl(var(--hsl-neutral-1200));
+  --clr-neutral-1300: hsl(var(--hsl-neutral-1300));
+
+  --primary-btn-color: var(--clr-primary-800);
+  --accent-btn-color: var(--clr-accent-500);
+}
+
+body {
+  width: 100%;
+  min-height: 100svh;
+  background-color: var(--clr-primary-100);
+}
+
+.flex-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 header {
-    background-color: var(--clr-primary-600);
+  justify-content: space-between;
+  padding: 0.75rem 3rem;
+  background-color: var(--clr-primary-600);
+
+  & a {
+    color: var(--clr-neutral-400);
+  }
+}
+
+.logo {
+  width: 7.5rem;
+  height: min-content;
+
+  & path {
+    /* Necesario para poder manipular el color */
+    fill: var(--clr-primary-900) !important;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.page-container:not(:last-child) {
+  padding-right: 0.5rem;
 }
 
 .search-bar {
-    padding: .5rem;
-    border-radius: 4rem;
-    border: .175rem var(--clr-primary-800) solid;
+  padding: 0.5rem;
+  border-radius: 4rem;
+  border: 0.175rem var(--clr-primary-800) solid;
 }
 
+form {
+  --_border: 1rem;
+
+  display: flex;
+}
+
+.sign-in {
+  display: flex;
+  margin-right: 2rem;
+
+  & > .primary-btn {
+    border-radius: 0 var(--_border) var(--_border) 0;
+  }
+}
+
+[type="email"] {
+  padding: 0.5rem;
+  border: 0.125rem var(--_primary-btn-color) solid;
+  border-radius: var(--_border) 0 0 var(--_border);
+}
+
+[type="button"] {
+  padding: 1.25rem 2rem;
+  border: none;
+  border-radius: 1em;
+}
+
+.primary-btn {
+  color: var(--clr-neutral-400);
+  background-color: var(--primary-btn-color);
+}
+
+.accent-btn {
+  color: var(--clr-neutral-1200);
+  background-color: var(--accent-btn-color);
+}
+
+.accent2-btn {
+  --_outline-stroke: .5rem;
+
+  color: var(--accent-btn-color);
+  background-color: transparent;
+  outline: var(--_outline-stroke) solid var(--accent-btn-color);
+  outline-offset: calc(-1 * var(--_outline-stroke));
+}
+
+.donwload-buttons {
+  width: 100%;
+  justify-content: space-around;
+
+  & > * {
+    min-width: min-content;
+    width: min(30%, 20rem);
+  }
+}
+
+.doc-sidebar {
+  width: min-content;
+  padding-right: 5rem;
+  border: 0.25rem var(--clr-primary-800) solid;
+}
+
+.forum-title {
+  padding: 1rem 2rem;
+  background-color: var(--clr-accent-500);
+}
